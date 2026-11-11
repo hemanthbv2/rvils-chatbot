@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVILS Chatbot — UI & Visual Design Inspection Gallery</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0F172A; color: #F1F5F9; line-height: 1.6; padding: 32px 20px; }
+        header { text-align: center; max-width: 900px; margin: 0 auto 40px auto; }
+        h1 { font-size: 28px; font-weight: 800; color: #FFCE7C; margin-bottom: 8px; }
+        p { color: #94A3B8; font-size: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 28px; max-width: 1400px; margin: 0 auto; }
+        .card { background: #1E293B; border-radius: 14px; border: 1px solid #334155; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.4); display: flex; flex-direction: column; }
+        .card-header { padding: 16px 20px; border-bottom: 1px solid #334155; background: #162032; }
+        .card-title { font-size: 16px; font-weight: 700; color: #F8FAFC; display: flex; align-items: center; justify-content: space-between; }
+        .badge { background: #7B371C; color: #FFCE7C; font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: 600; }
+        .card-desc { font-size: 13px; color: #94A3B8; margin-top: 4px; }
+        .card-img { width: 100%; height: auto; display: block; border-bottom: 1px solid #334155; cursor: pointer; transition: transform 0.2s; }
+        .card-img:hover { transform: scale(1.01); }
+        .card-footer { padding: 12px 20px; font-size: 12px; color: #64748B; background: #162032; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏛️ MKPM RVILS Chatbot — Complete UI Inspection Gallery</h1>
+        <p>Visual inspection report capturing all key design states, typography, mobile viewports, lead modals, and the command center dashboard.</p>
+    </header>
+    <div class="grid">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">01. Floating Action Button (FAB) <span class="badge">Desktop</span></div>
+                <div class="card-desc">RVILS Deep Mahogany (#7B371C) button with brass border and notification badge.</div>
+            </div>
+            <a href="01_fab_landing.png" target="_blank"><img class="card-img" src="01_fab_landing.png" alt="FAB Landing"></a>
+            <div class="card-footer">Element: #rvilsChatFab · Pulsing animation and hover elevation</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">02. Chat Opened & Welcome Greeting <span class="badge">Desktop</span></div>
+                <div class="card-desc">Brand header with official logo, tone toggle (PRO/FUNNY), sound toggle, verified greeting & quick chips.</div>
+            </div>
+            <a href="02_chat_opened_greeting.png" target="_blank"><img class="card-img" src="02_chat_opened_greeting.png" alt="Greeting"></a>
+            <div class="card-footer">Element: #rvilsChatWindow · 410px width with rounded corners & shadow</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">03. Academic Program Q&A <span class="badge">Desktop</span></div>
+                <div class="card-desc">Structured response with KSLU percentage eligibility (45%/42%/40%), career paths, and feedback buttons.</div>
+            </div>
+            <a href="03_program_details.png" target="_blank"><img class="card-img" src="03_program_details.png" alt="Program Details"></a>
+            <div class="card-footer">Intent: program_ba_llb · Markdown rendering with title borders</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">04. Deep Scraped Corpus Search <span class="badge">Desktop</span></div>
+                <div class="card-desc">Verified Sports page search: Director of Physical Education & Melbourne Commonwealth Kabaddi referee.</div>
+            </div>
+            <a href="04_deep_scraped_corpus.png" target="_blank"><img class="card-img" src="04_deep_scraped_corpus.png" alt="Deep Scraped Search"></a>
+            <div class="card-footer">Source: rvils.edu.in/sports · Zero external hallucinations</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">05. Lead Capture Modal <span class="badge">Modal Overlay</span></div>
+                <div class="card-desc">Student consultation booking form with glassmorphism backdrop blur and validation fields.</div>
+            </div>
+            <a href="05_lead_modal.png" target="_blank"><img class="card-img" src="05_lead_modal.png" alt="Lead Modal"></a>
+            <div class="card-footer">Element: #rvilsLeadModal · Integrated with dual-write telemetry</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">06. Mobile Responsive View <span class="badge">Mobile (390x844)</span></div>
+                <div class="card-desc">Full-screen adaptive view on iPhone 13/14 with zero horizontal scroll and touch-friendly controls.</div>
+            </div>
+            <a href="06_mobile_responsive.png" target="_blank"><img class="card-img" src="06_mobile_responsive.png" alt="Mobile View"></a>
+            <div class="card-footer">CSS: @media (max-width: 480px) · 100vw x 100vh adaptive container</div>
+        </div>
+
+        <div class="card" style="grid-column: 1 / -1;">
+            <div class="card-header">
+                <div class="card-title">07. Standalone Command Center Dashboard <span class="badge">Admin Hub</span></div>
+                <div class="card-desc">Dark glassmorphism analytics dashboard (#030712) with real-time SSE stream, KPI cards, and session player.</div>
+            </div>
+            <a href="07_standalone_dashboard.png" target="_blank"><img class="card-img" src="07_standalone_dashboard.png" alt="Command Center"></a>
+            <div class="card-footer">Server: http://localhost:3001 · Dual-write hub for WordPress & Standalone telemetry</div>
+        </div>
+    </div>
+</body>
+</html>

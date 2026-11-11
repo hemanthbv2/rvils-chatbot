@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVILS Command Center — Real-Time Legal Analytics Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="mesh-bg"></div>
+
+    <aside>
+        <div class="logo-area">
+            <div class="logo-box">⚖️</div>
+            <div class="logo-text">
+                <h2>RVILS</h2>
+                <p>Command Center</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item active" data-tab="overview">📊 Live Overview</li>
+            <li class="nav-item" data-tab="leads">📋 Admissions Leads</li>
+            <li class="nav-item" data-tab="analytics">📈 Behavioral Funnel</li>
+            <li class="nav-item" data-tab="sessions">🌐 Visitor Journeys</li>
+        </ul>
+        <div class="aside-footer">
+            <div class="badge-pill">⚡ Central Hub v3.1.0</div>
+            <p>MKPM RVILS · RSST Trust</p>
+        </div>
+    </aside>
+
+    <main>
+        <header>
+            <div class="header-left">
+                <h1>Executive Intelligence Command Center</h1>
+                <p>Real-time conversational telemetry & admissions lead stream</p>
+            </div>
+            <div class="header-right">
+                <div class="live-pill">
+                    <span class="live-pulse"></span>
+                    <span>SYSTEM ONLINE</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="tab-overview" class="tab-pane active">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="kpi-label">Total Inquiries</span>
+                    <span class="kpi-val" id="statLeads">0</span>
+                    <span class="kpi-tag green">+100% Verified</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Active Sessions</span>
+                    <span class="kpi-val" id="statSessions">0</span>
+                    <span class="kpi-tag gold">Cross-Domain Handshake</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Telemetry Ingested</span>
+                    <span class="kpi-val" id="statEvents">0</span>
+                    <span class="kpi-tag green">Dual-Write Ingestion</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Client NLP Latency</span>
+                    <span class="kpi-val">&lt; 15ms</span>
+                    <span class="kpi-tag green">Zero Cloud Token Cost</span>
+                </div>
+            </div>
+
+            <div class="card-wrap">
+                <div class="card-title-bar">
+                    <h3>Recent Admissions Inquiries</h3>
+                    <button class="btn-action" onclick="exportLeads()">📥 Export Leads (.xlsx)</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Target Programme</th>
+                            <th>City / State</th>
+                            <th>Submitted</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="overviewLeadsTable">
+                        <tr><td colspan="7" class="loading-td">Awaiting real-time leads from RVILS chatbot...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Leads Section -->
+        <section id="tab-leads" class="tab-pane">
+            <div class="card-wrap">
+                <div class="card-title-bar">
+                    <h3>Full Admissions CRM Directory</h3>
+                    <button class="btn-action" onclick="exportLeads()">📥 Export Directory</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Programme</th>
+                            <th>City</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fullLeadsTable">
+                        <tr><td colspan="7" class="loading-td">Loading leads...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="tab-analytics" class="tab-pane">
+            <div class="charts-grid">
+                <div class="card-wrap">
+                    <h3>Conversion Funnel</h3>
+                    <canvas id="liveFunnelChart"></canvas>
+                </div>
+                <div class="card-wrap">
+                    <h3>Law Degree Interest Share</h3>
+                    <canvas id="liveProgramChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessions Section -->
+        <section id="tab-sessions" class="tab-pane">
+            <div class="card-wrap">
+                <div class="card-title-bar">
+                    <h3>Active Visitor Session Logs</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Session ID</th>
+                            <th>First Seen</th>
+                            <th>Last Active</th>
+                            <th>Messages</th>
+                            <th>Page Views</th>
+                            <th>Referrer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sessionsTable">
+                        <tr><td colspan="6" class="loading-td">Loading sessions...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

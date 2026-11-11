@@ -1,0 +1,25 @@
+{
+  "name": "rvils-standalone-dashboard",
+  "version": "3.1.0",
+  "description": "MKPM RV Institute of Legal Studies (RVILS) Standalone Analytics & Command Center",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "keywords": [
+    "rvils",
+    "chatbot",
+    "analytics",
+    "command-center",
+    "law-college"
+  ],
+  "author": "RVILS Legal Informatics Team & RSST",
+  "license": "ISC"
+}
+
