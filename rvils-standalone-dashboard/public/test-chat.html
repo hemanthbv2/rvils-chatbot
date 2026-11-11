@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVILS Chatbot & Virtual Assistant — Live Demo</title>
+    <link rel="stylesheet" href="chatbot.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #FAF7F5;
+            color: #2B1E1A;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .hero {
+            background: linear-gradient(135deg, #2B1E1A 0%, #7B371C 100%);
+            color: #ffffff;
+            padding: 60px 24px;
+            text-align: center;
+            border-bottom: 4px solid #C07A3A;
+        }
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            background: #2B1E1A;
+            padding: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+            border: 2px solid #C07A3A;
+        }
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 16px;
+            max-width: 680px;
+            margin: 0 auto 20px auto;
+            color: #FFE8B7;
+        }
+        .badge-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 206, 124, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(123, 55, 28, 0.15);
+            box-shadow: 0 4px 16px rgba(43, 30, 26, 0.05);
+        }
+        .card h3 {
+            color: #7B371C;
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .test-btn {
+            background: #7B371C;
+            color: #ffffff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            margin-right: 6px;
+            transition: all 0.2s;
+        }
+        .test-btn:hover {
+            background: #5C2A0E;
+            transform: translateY(-1px);
+        }
+        .logs-box {
+            background: #1E1917;
+            color: #10B981;
+            font-family: monospace;
+            font-size: 12px;
+            padding: 14px;
+            border-radius: 10px;
+            max-height: 180px;
+            overflow-y: auto;
+            margin-top: 14px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6B5E59;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <img src="rvils_logo.png" alt="RVILS Emblem" class="hero-logo" onerror="this.src='https://rvils.edu.in/wp-content/uploads/2026/03/logo.png'">
+        <h1>MKPM RV Institute of Legal Studies (RVILS)</h1>
+        <p>Official Institutional Chatbot & Dual-Write Analytics Platform</p>
+        <div class="badge-bar">
+            <span class="badge">⚖️ KSLU Affiliated</span>
+            <span class="badge">🏛️ BCI Approved</span>
+            <span class="badge">🏛️ RSST Trust Institution</span>
+            <span class="badge">⚡ Zero-Cloud-AI Deterministic Engine</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h3>💬 Interactive Chatbot Widget</h3>
+                <p>Click the floating button in the bottom-right corner to launch the RVILS Legal Assistant. Try questions about courses, admissions, faculty, or moot court!</p>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('Tell me about 5-Year B.A. LL.B.');">Ask: B.A. LL.B.</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('How does RVILS-LAT work?');">Ask: RVILS-LAT</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('Who is the principal?');">Ask: Principal</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('Tell me about Moot Court');">Ask: Moot Court</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('Help me choose which law course');">⚖️ Stream Matcher</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('What is the mandatory 20-week internship roadmap?');">🗺️ 20-Wk Internship Roadmap</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('Explain Latin maxims and legal glossary');">🏛️ Latin Maxims</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('What does pro bono publico mean?');">⚖️ Pro Bono Publico</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('Tell me about research and publications at RVILS');">📚 Research & Publications</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('What is the ISSN of RV Law Journal and how to submit?');">⚖️ RV Law Journal</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('Does RVILS collaborate with University of Leeds?');">🌐 Leeds Collaboration</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('how to get admisssion');">Fuzzy Typo Test</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('tell me more details');">Multi-Turn Context</button>
+            </div>
+
+            <div class="card">
+                <h3>📋 Lead Generation & Consultation</h3>
+                <p>Direct lead capture with real-time telemetry logging to both WordPress MySQL and Central Node.js Command Hub.</p>
+                <button class="test-btn" onclick="window.RVILSChatbot.openLeadModal();">Open Enquiry Form</button>
+                <button class="test-btn" onclick="window.RVILSChatbot.open(); window.RVILSChatbot.ask('What is the fee structure?');">Ask: Fees</button>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <h3>📡 Real-Time Telemetry & Session Monitor</h3>
+                <p>Active Session ID: <strong id="activeSid">Detecting...</strong> | Friction & Event Logs:</p>
+                <div id="liveTelemetryLogs" class="logs-box">Initializing telemetry queue...</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Rashtreeya Sikshana Samithi Trust (RSST) · RV Institute of Legal Studies, Bengaluru
+    </footer>
+
+    <!-- Configuration for local dev & telemetry -->
+    <script>
+        window.rvilsChatbotConfig = {
+            wpRestUrl: '/wp-json/rvils/v1/telemetry',
+            vercelUrl: (window.location.origin ? window.location.origin + '/api/telemetry/events' : 'http://localhost:3001/api/telemetry/events'),
+            instituteId: 'RVILS_BLR'
+        };
+    </script>
+
+    <!-- Load Telemetry & Engine -->
+    <script src="telemetry.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Update live monitor
+        setInterval(function() {
+            if (window.rvilsSessionId) {
+                document.getElementById('activeSid').textContent = window.rvilsSessionId;
+            }
+        }, 1000);
+
+        // Intercept logEvent for local UI feedback
+        const origLog = window.rvilsTelemetry.logEvent;
+        window.rvilsTelemetry.logEvent = function(type, data) {
+            origLog(type, data);
+            const box = document.getElementById('liveTelemetryLogs');
+            if (box) {
+                const line = `[${new Date().toLocaleTimeString()}] Event: ${type} | ${JSON.stringify(data).substring(0, 90)}`;
+                box.innerHTML = line + "<br>" + box.innerHTML;
+            }
+        };
+    </script>
+</body>
+</html>
+

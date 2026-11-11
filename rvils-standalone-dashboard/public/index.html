@@ -38,7 +38,8 @@
                 <h1>Executive Intelligence Command Center</h1>
                 <p>Real-time conversational telemetry & admissions lead stream</p>
             </div>
-            <div class="header-right">
+            <div class="header-right" style="display: flex; align-items: center; gap: 14px;">
+                <a href="/test-chat.html" target="_blank" style="background: linear-gradient(135deg, #7B371C, #5C2A0E); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,206,124,0.3); box-shadow: 0 4px 12px rgba(123,55,28,0.25); transition: transform 0.2s;">🚀 Live Chatbot Simulator</a>
                 <div class="live-pill">
                     <span class="live-pulse"></span>
                     <span>SYSTEM ONLINE</span>
@@ -161,6 +162,18 @@
     </main>
 
     <script src="app.js"></script>
+
+    <!-- Embedded Floating RVILS Legal Chatbot Widget -->
+    <link rel="stylesheet" href="chatbot.css">
+    <script>
+        window.rvilsChatbotConfig = {
+            wpRestUrl: '',
+            vercelUrl: '/api/telemetry/events',
+            instituteId: 'RVILS_BLR'
+        };
+    </script>
+    <script src="telemetry.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
