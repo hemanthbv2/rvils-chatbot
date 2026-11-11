@@ -161,3 +161,4 @@ When presenting this proposal to the RVILS leadership, the following approval ch
 3. [ ] **WordPress Plugin Installation:** Authorization to deploy `rvils-chatbot.zip` into the production WordPress environment.
 4. [ ] **Telemetry Hosting Approval:** Decision on whether to utilize the internal WordPress database or the standalone Central Command Center on cloud infrastructure.
 5. [ ] **Phase-2 Integration Priority:** Selection of top 2 priority integrations from Part 2 (e.g., WhatsApp Business API and Razorpay Payment Gateway).
+
